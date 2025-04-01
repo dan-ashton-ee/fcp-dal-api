@@ -13,12 +13,8 @@ const fetch = (path, method = 'GET') => {
 
 export default {
   decodeBase64,
-  get fetch () {
+  get fetch() {
     if (!client) {
-      const kitsURL = new URL(config.get('kitsConnection.path'), `https://${config.get('kitsConnection.host')}`)
-      kitsURL.port = config.get('kitsConnection.port')
-      logger.info(`Creating new client for ${kitsURL.href}`)
-
       if (config.get('kitsConnection.key') && config.get('kitsConnection.cert')) {
         const tls = {
           key: decodeBase64(config.get('kitsConnection.key')),
@@ -28,9 +24,9 @@ export default {
         }
         logger.info('KITS TLS configuration:')
         logger.info(tls)
-        client = new Client(kitsURL.href, { connect: tls })
+        client = new Client(config.get('httpProxy'), { connect: tls })
       } else {
-        client = new Client(kitsURL.href)
+        client = new Client()
       }
     }
 
