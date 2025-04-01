@@ -1,10 +1,32 @@
 services:
+  forwarder:
+    image: saucelabs/forwarder
+    environment:
+      - FORWARDER_PROXY=${CDP_HTTPS_PROXY}
+    command:
+      [
+        'run',
+        '--log-http=proxy:headers,url,body,errors',
+        '--log-level=debug',
+        '--proxy-localhost=direct'
+      ]
+    ports:
+      - 3128:3128
+    networks:
+      - cdp-tenant
+
   fcp-dal-api:
     build:
       context: .
     ports:
       - '3001:3001'
     environment:
+      KITS_HOST: chs-upgrade-api.ruraldev.org.uk
+      KITS_PORT: 8444
+      KITS_PATH: /extapi
+      KITS_CONNECTION_KEY: ${KITS_CONNECTION_KEY}
+      KITS_CONNECTION_CERT: ${KITS_CONNECTION_CERT}
+      HTTP_PROXY: http://forwarder:3128
       PORT: 3001
       NODE_ENV: development # overridden for friendlier logging
     networks:
