@@ -53,7 +53,7 @@ type CustomerName {
   first: String
 
   """
-  Middle name of the customer.
+  Middle names of the customer.
   """
   middle: String
 
