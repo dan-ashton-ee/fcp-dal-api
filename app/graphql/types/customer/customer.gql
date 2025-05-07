@@ -88,7 +88,7 @@ Authenticate questions of the customer.
 
 Data source: Rural Payments Portal
 
-These are the memorable words (date, place, event) used to verify the 
+These are the memorable words (date, place, event) used to verify the
 customer when they call the RPA. Originally, these were held in the
 'Authenticate' system, but the data and functionality transferred to
 the portal.
@@ -130,7 +130,6 @@ type Customer {
   Internal SitiAgri/Portal unique identifier of the customer.
   """
   personId: ID! @on #eslint-disable-line @graphql-eslint/no-typename-prefix
-
   """
   Customer Reference Number (CRN) of the customer. Unique 10-digit number used
   to identify the customer. The customer should know their CRN, although their

@@ -113,7 +113,7 @@ type BusinessCustomer {
   lastName: String @on
 
   """
-  Unique Customer Reference Number (CRN) of the customer. 10-digit number that should 
+  Unique Customer Reference Number (CRN) of the customer. 10-digit number that should
   be known to to the customer, for example, 1234567890. This is the same format as the
   Firm Reference Number (FRN).
   """
@@ -138,7 +138,6 @@ type Business {
   Internal SitiAgri/Portal unique identifier for the business.
   """
   organisationId: ID @on #eslint-disable-line @graphql-eslint/no-typename-prefix
-
   """
   Single Business Identifier (SBI) of the business.
 
