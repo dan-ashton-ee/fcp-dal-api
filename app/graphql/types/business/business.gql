@@ -12,7 +12,7 @@ type BusinessInfo {
 
   A unique 10-digit number that is known to the customer, for example, 1234567890.
   However a customer is more likely to be familiar with their Single Business Identified
-  (SBI). FRN is commonly used in RPA's payment systems. The format is the same the
+  (SBI). FRN is commonly used in RPA's payment systems. The format is the same as the
   Customer Reference Number (CRN), which is also a 10-digit number.
   """
   reference: String
