@@ -163,7 +163,7 @@ type Business {
   cphs: [CPH]
 
   """
-  County Parish Holding (CPH) numbers of the business.
+  County Parish Holding (CPH) number of the business.
   """
   cph(number: String!): CPH
 
